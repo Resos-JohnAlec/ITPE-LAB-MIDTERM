@@ -1,0 +1,26 @@
+PASS: Upcoming seeded catalog is served from SQL Server
+PASS: Catalog excludes started events
+PASS: Valid registration returns HTTP 201
+PASS: Duplicate email/event is rejected case-insensitively
+PASS: Spoofed domain suffix is rejected by server
+PASS: Invalid full name is rejected by server
+PASS: Nonexistent event returns HTTP 404
+PASS: Attendees cannot be read without the admin key
+PASS: Authorized administrator sees the committed attendee
+PASS: Available seats are derived from committed registrations
+PASS: Existing user's name is not silently overwritten
+PASS: Eight concurrent requests produce exactly one last-seat winner
+PASS: Other concurrent requests receive HTTP 409
+PASS: Last-seat event is not overbooked in the database
+PASS: Started events reject registration
+PASS: Started fixture is excluded from the student catalog
+PASS: Administrator can still select past events
+PASS: Capacity CHECK rejects zero
+PASS: SQL UNIQUE rejects duplicate user/event pair
+PASS: SQL foreign key rejects missing user
+PASS: NO ACTION prevents deleting an event with attendance history
+PASS: Every foreign key is the leading column of a non-clustered index
+PASS: Refactored scalar lookup returns a registration ID
+PASS: Refactored scalar lookup handles no rows without null dereference
+PASS: Valid-format SQL metacharacters are treated as data by the parameterized lookup
+Integration verification passed: 25 checks. Database: CampusEventsVerification_20260930_080656_api

@@ -1,0 +1,31 @@
+{
+  "checkedAt": "2026-09-30T00:07:11.475Z",
+  "checks": [
+    "Catalog renders real API event data",
+    "No automated WCAG A/AA violations: catalog ()",
+    "No page overflow at 375px",
+    "No page overflow at 768px",
+    "No page overflow at 1024px",
+    "No page overflow at 1440px",
+    "Search displays a genuine empty state",
+    "Opening registration moves keyboard focus into the form",
+    "No automated WCAG A/AA violations: registration ()",
+    "Empty form produces a textual validation error",
+    "Form rejects a deceptive university-domain suffix",
+    "Registration confirms a real server registration ID",
+    "No automated WCAG A/AA violations: success ()",
+    "Duplicate registration is shown as an actionable server error",
+    "Escape closes the registration dialog",
+    "No automated WCAG A/AA violations: admin-locked ()",
+    "Wrong administrator key does not expose attendees",
+    "Organizer table shows the student registered through the UI",
+    "No automated WCAG A/AA violations: admin-attendees ()",
+    "Administrator page fits mobile width",
+    "Locking access clears attendee data from the page",
+    "No credentials or attendee data are persisted in browser storage",
+    "No browser JavaScript exceptions"
+  ],
+  "pageErrors": [],
+  "browser": "154.0.8037.58",
+  "note": "Automated checks do not establish complete WCAG conformance or replace human review."
+}
