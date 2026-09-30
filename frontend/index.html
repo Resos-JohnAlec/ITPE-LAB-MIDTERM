@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Discover campus events, find your community, and save your seat."
+    />
+    <title>Campus Gather · Discover your next thing</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Campus Gather home"
+        ><span class="brand-mark" aria-hidden="true">cg.</span
+        ><span>campus<span class="brand-light">gather</span></span></a
+      >
+      <nav aria-label="Main navigation">
+        <a class="nav-active" href="#events" aria-current="page"
+          >Discover events</a
+        ><a href="admin.html"
+          >For organizers <span aria-hidden="true">↗</span></a
+        >
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">
+            <span class="small-line" aria-hidden="true"></span> YOUR CAMPUS.
+            YOUR COMMUNITY.
+          </p>
+          <h1 id="hero-title">
+            Good things happen<br />when we <em>gather.</em>
+          </h1>
+          <p class="hero-description">
+            New ideas, familiar faces, and something a little unexpected.<br
+              class="desktop-break"
+            />
+            Find your next campus experience and make it yours.
+          </p>
+          <a class="button primary" href="#events"
+            >Explore events <span aria-hidden="true">↗</span></a
+          >
+          <p class="hero-note">Made for the DLSU-D community.</p>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <span class="art-star">✳</span>
+          <div class="art-ticket">
+            <span>YOU'RE INVITED</span
+            ><strong>A little curiosity.<br />A lot of possibility.</strong
+            ><span class="ticket-bottom">CAMPUS GATHER <span>↗</span></span>
+          </div>
+          <span class="art-caption"
+            >More than an event.<br />A place to belong.</span
+          >
+          <div class="art-circle"></div>
+        </div>
+      </section>
+
+      <section id="events" class="catalog" aria-labelledby="events-title">
+        <header class="section-heading">
+          <div>
+            <p class="eyebrow">MAKE ROOM FOR SOMETHING NEW</p>
+            <h2 id="events-title">Coming up on campus</h2>
+          </div>
+          <p class="section-note">A seat for you. A story to take home.</p>
+        </header>
+        <div class="catalog-toolbar">
+          <label class="search-label" for="event-search"
+            ><span aria-hidden="true">⌕</span
+            ><input
+              id="event-search"
+              type="search"
+              aria-label="Search campus events"
+              placeholder="Find an event, topic, or place"
+              autocomplete="off"
+          /></label>
+          <p id="event-count" class="muted" role="status">Loading events…</p>
+        </div>
+        <p id="catalog-status" role="status" class="message">
+          Finding your next campus experience…
+        </p>
+        <button id="retry-events" class="button secondary" type="button" hidden>
+          Try again
+        </button>
+        <div
+          id="event-grid"
+          class="event-grid"
+          aria-label="Upcoming campus events"
+        ></div>
+      </section>
+
+      <section class="community-note" aria-labelledby="community-title">
+        <span class="community-spark" aria-hidden="true">✳</span>
+        <div>
+          <h2 id="community-title">Your next connection starts here.</h2>
+          <p>
+            Show up curious. Leave with a new idea, a new friend, or a new
+            favorite thing.
+          </p>
+        </div>
+        <a href="#events" class="text-link"
+          >Find your event <span aria-hidden="true">↗</span></a
+        >
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="/"
+        >campus<span class="brand-light">gather</span></a
+      >
+      <p>A student-built campus event prototype. Sample events.</p>
+      <span>DLSU-D COMMUNITY</span>
+    </footer>
+
+    <dialog id="registration-dialog" aria-labelledby="registration-title">
+      <header class="dialog-header">
+        <p class="eyebrow">SAVE YOUR SEAT</p>
+        <button
+          id="close-dialog"
+          class="icon-button"
+          type="button"
+          aria-label="Close registration"
+        >
+          ×
+        </button>
+      </header>
+      <h2 id="registration-title">Join the gathering</h2>
+      <p id="selected-event-details" class="muted"></p>
+      <form id="registration-form" novalidate>
+        <p class="form-intro">
+          All fields are required. Use your university email to register.
+        </p>
+        <label for="full-name">Full name</label>
+        <input
+          id="full-name"
+          name="fullName"
+          autocomplete="name"
+          required
+          minlength="2"
+          maxlength="100"
+          aria-describedby="name-error"
+          placeholder="Your full name"
+        />
+        <p id="name-error" class="field-error"></p>
+        <label for="email">University email</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          autocomplete="email"
+          required
+          maxlength="254"
+          aria-describedby="email-hint email-error"
+          placeholder="your.name@dlsud.edu.ph"
+        />
+        <p id="email-hint" class="field-hint">
+          Use your @dlsud.edu.ph email address.
+        </p>
+        <p id="email-error" class="field-error"></p>
+        <p id="form-error" class="message error" role="alert" hidden></p>
+        <button
+          id="submit-registration"
+          class="button primary full-width"
+          type="submit"
+        >
+          Confirm registration <span aria-hidden="true">↗</span>
+        </button>
+        <p class="privacy-note">
+          Your name and email will be visible to the event organizer.
+        </p>
+      </form>
+      <section
+        id="registration-success"
+        class="success-panel"
+        aria-labelledby="success-title"
+        hidden
+      >
+        <span class="success-mark" aria-hidden="true">✓</span>
+        <h3 id="success-title" tabindex="-1">You're on the list!</h3>
+        <p id="success-message"></p>
+        <p id="confirmation-number" class="muted"></p>
+        <button
+          id="done-button"
+          type="button"
+          class="button primary full-width"
+        >
+          Back to exploring
+        </button>
+      </section>
+    </dialog>
+  </body>
+</html>

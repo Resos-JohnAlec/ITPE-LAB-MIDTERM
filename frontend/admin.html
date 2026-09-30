@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Organizers · Campus Gather</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="admin.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Campus Gather home"
+        ><span class="brand-mark" aria-hidden="true">cg.</span
+        ><span>campus<span class="brand-light">gather</span></span></a
+      >
+      <nav aria-label="Main navigation">
+        <a href="/">Discover events</a
+        ><a class="nav-active" href="admin.html" aria-current="page"
+          >For organizers <span aria-hidden="true">↗</span></a
+        >
+      </nav>
+    </header>
+    <main id="main" class="admin-main">
+      <section class="admin-intro" aria-labelledby="admin-title">
+        <p class="eyebrow">BEHIND EVERY GOOD GATHERING</p>
+        <h1 id="admin-title">Know who's coming.</h1>
+        <p class="muted">
+          Your event, your community. Find the registered attendees for each
+          campus gathering.
+        </p>
+      </section>
+      <section
+        id="access-panel"
+        class="admin-access"
+        aria-labelledby="access-title"
+      >
+        <h2 id="access-title">Organizer access</h2>
+        <p class="muted">
+          Enter the access key provided by the person running this prototype.
+        </p>
+        <form id="access-form" class="inline-form">
+          <div>
+            <label for="admin-key">Administrator access key</label
+            ><input
+              id="admin-key"
+              type="password"
+              autocomplete="off"
+              required
+              aria-describedby="access-hint"
+            />
+          </div>
+          <button id="unlock-button" class="button primary" type="submit">
+            View attendees
+          </button>
+        </form>
+        <p id="access-hint" class="field-hint">
+          The key is kept in this page's memory only. Use sample student data
+          for this classroom demo.
+        </p>
+      </section>
+      <p id="admin-status" class="message" role="status" hidden></p>
+      <section id="attendees-panel" aria-labelledby="attendees-title" hidden>
+        <header class="admin-topline">
+          <h2 id="attendees-title" tabindex="-1">The guest list</h2>
+          <button id="lock-button" type="button" class="button secondary">
+            Lock access
+          </button>
+        </header>
+        <div class="admin-toolbar">
+          <div>
+            <label for="admin-event">Choose an event</label
+            ><select id="admin-event"></select>
+          </div>
+          <button id="refresh-attendees" type="button" class="button secondary">
+            Refresh list
+          </button>
+        </div>
+        <div class="table-scroll">
+          <table>
+            <caption id="attendee-caption">
+              Registered attendees
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Full name</th>
+                <th scope="col">University email</th>
+                <th scope="col">Registered (PHT)</th>
+              </tr>
+            </thead>
+            <tbody id="attendee-rows"></tbody>
+          </table>
+        </div>
+        <p id="attendee-empty" class="message" hidden>
+          No registrations yet. The first seat is waiting to be filled.
+        </p>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="/"
+        >campus<span class="brand-light">gather</span></a
+      >
+      <p>A student-built campus event prototype. Sample events.</p>
+      <span>DLSU-D COMMUNITY</span>
+    </footer>
+  </body>
+</html>
