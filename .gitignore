@@ -1,0 +1,12 @@
+.tools/
+.local/
+**/bin/
+**/obj/
+node_modules/
+TestResults/
+playwright-report/
+test-results/
+.env
+*.user
+*.mdf
+*.ldf
