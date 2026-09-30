@@ -1,0 +1,22 @@
+erDiagram
+    Users ||--o{ Registrations : makes
+    Events ||--o{ Registrations : receives
+    Users {
+        int UserId PK
+        nvarchar100 FullName
+        nvarchar254 Email UK
+    }
+    Events {
+        int EventId PK
+        nvarchar150 Title
+        nvarchar1000 Description
+        nvarchar150 Location
+        datetimeoffset StartsAt
+        int Capacity
+    }
+    Registrations {
+        int RegistrationId PK
+        int UserId FK "Composite unique with EventId"
+        int EventId FK "Composite unique with UserId"
+        datetimeoffset RegisteredAt
+    }
